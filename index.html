@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            My Page
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            My name is Zixin Zou and my favorite hobby is playing games with my friends. The current time is <span id="time"></span>
+        </h1>
+        <script>
+            setInterval (time,1000);
+            function time (){
+                const d = new Date()
+                let t = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()
+                document.getElementById("time").innerHTML = (t)
+            }
+        </script>
+    </body>
+
+</html>
