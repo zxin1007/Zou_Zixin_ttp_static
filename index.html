@@ -14,7 +14,19 @@
             setInterval (time,1000);
             function time (){
                 const d = new Date()
-                let t = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()
+                let hour = d.getHours()
+                let min = d.getMinutes()
+                let sec = d.getSeconds()
+                let t = ""
+                if (min<10 && sec<10){
+                    t=d.getHours()+":0"+d.getMinutes()+":0"+d.getSeconds()
+                } else if (min<10){
+                    t=d.getHours()+":0"+d.getMinutes()+":"+d.getSeconds()
+                }  else if (sec<10){
+                    t=d.getHours()+":"+d.getMinutes()+":0"+d.getSeconds()
+                } else {
+                    t=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()
+                }
                 document.getElementById("time").innerHTML = (t)
             }
         </script>
