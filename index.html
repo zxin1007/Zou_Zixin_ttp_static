@@ -11,24 +11,23 @@
             My name is Zixin Zou and my favorite hobby is playing games with my friends. The current time is <span id="time"></span>
         </h1>
         <script>
-            setInterval (time,1000);
-            function time (){
+            setInterval (function time (){
                 const d = new Date()
                 let hour = d.getHours()
                 let min = d.getMinutes()
                 let sec = d.getSeconds()
                 let t = ""
                 if (min<10 && sec<10){
-                    t=d.getHours()+":0"+d.getMinutes()+":0"+d.getSeconds()
+                    min = "0"+min
+                    sec = "0"+sec
                 } else if (min<10){
-                    t=d.getHours()+":0"+d.getMinutes()+":"+d.getSeconds()
+                    min = "0"+min
                 }  else if (sec<10){
-                    t=d.getHours()+":"+d.getMinutes()+":0"+d.getSeconds()
-                } else {
-                    t=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()
-                }
-                document.getElementById("time").innerHTML = t
-            }
+                    sec = "0"+sec
+                } else {}
+                t = hour+":"+min+":"+sec
+                document.getElementById("time").textContent = t
+            },1000)
         </script>
     </body>
 
