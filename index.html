@@ -17,6 +17,9 @@
                 let min = d.getMinutes()
                 let sec = d.getSeconds()
                 let t = ""
+                if (hour>12){
+                    hour-=12;
+                }
                 if (min<10 && sec<10){
                     min = "0"+min
                     sec = "0"+sec
